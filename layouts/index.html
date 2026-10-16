@@ -1,6 +1,7 @@
 {{ define "main" }}
-<section class="hero">
-  <div class="wrap">
+<section class="hero{{ with site.Params.hero }} hero-has-photo{{ end }}">
+  {{ partial "hero-image.html" . }}
+  <div class="wrap hero-content">
     <p class="eyebrow">NSF NCAR Workshop · {{ site.Params.dates }}</p>
     <h1>{{ site.Title }}</h1>
     <p class="hero-meta">{{ site.Params.venue }}</p>

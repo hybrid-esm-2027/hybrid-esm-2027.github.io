@@ -17,6 +17,7 @@ Most updates are edits to YAML files in `data/` — no HTML required.
 | Dates, venue, contact email, registration link | `[params]` in `hugo.toml` |
 | Page text | `content/*.md` |
 | Announcements | add `content/news/<slug>.md` with `title`, `date`, `description` front matter |
+| Homepage banner photo, its focal point, and credit | `[params.hero]` in `hugo.toml`; image file in `assets/images/` |
 | Slides, PDFs | put files in `static/files/` and link as `/files/<name>.pdf` |
 
 To open registration, set `registration_open = true` and `registration_url = "..."` in `hugo.toml`.
@@ -41,3 +42,12 @@ content/                page text (Markdown)
 layouts/                templates; layouts/shortcodes/ render the data files
 assets/css/site.css     the single stylesheet (light and dark mode)
 ```
+
+## Image credit
+
+The homepage banner is
+[*National Center for Atmospheric Research – Boulder, Colorado*](https://commons.wikimedia.org/wiki/File:National_Center_for_Atmospheric_Research_-_Boulder,_Colorado.jpg)
+by Daderot (Wikimedia Commons), licensed
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/); resized and cropped for this site.
+The adapted image in `assets/images/` is distributed under the same license. The site footer
+carries the required attribution — keep it if the photo stays.
