@@ -1,3 +1,11 @@
 # Organizing committee. Fields: name, affiliation, url (optional), role (optional).
-# TBD: add the confirmed committee; the Organizers page shows "to be announced" while this list is empty.
-[]
+- name: Will Chapman
+  affiliation: CU Boulder
+- name: David John Gagne
+  affiliation: NCAR
+- name: Aneesh Subramanian
+  affiliation: CU Boulder
+- name: Linnia Hawkins
+  affiliation: Columbia University
+- name: Andrew Gettelman
+  affiliation: PNNL / CU Boulder
