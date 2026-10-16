@@ -1,0 +1,19 @@
+{{/* Responsive background photo for the homepage hero, configured under [params.hero] in hugo.toml. */}}
+{{ with site.Params.hero }}
+  {{ with resources.Get .image }}
+    {{ $img := . }}
+    {{ $widths := slice 800 1400 2000 }}
+    {{ $webp := slice }}
+    {{ range $widths }}
+      {{ $r := $img.Resize (printf "%dx webp q78" .) }}
+      {{ $webp = $webp | append (printf "%s %dw" $r.RelPermalink .) }}
+    {{ end }}
+    {{ $fallback := $img.Resize "1400x jpg q80" }}
+    <picture class="hero-photo">
+      <source type="image/webp" srcset="{{ delimit $webp ", " }}" sizes="100vw">
+      <img src="{{ $fallback.RelPermalink }}" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}"
+           alt="{{ site.Params.hero.alt }}" fetchpriority="high" decoding="async"
+           style="object-position: {{ site.Params.hero.position | default "50% 50%" | safeCSS }}">
+    </picture>
+  {{ end }}
+{{ end }}

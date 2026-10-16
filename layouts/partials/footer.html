@@ -2,5 +2,6 @@
   <div class="wrap">
     <p><strong>{{ site.Title }}</strong><br>{{ site.Params.dates }} · {{ site.Params.venue }}</p>
     <p>{{ with site.Params.contact_email }}Contact: <a href="mailto:{{ . }}">{{ . }}</a>{{ else }}Contact details to be announced.{{ end }}</p>
+    {{ with site.Params.hero }}<p class="credit">{{ .credit }}, <a href="{{ .source_url }}">Wikimedia Commons</a>, <a href="{{ .license_url }}" rel="license">{{ .license }}</a> (resized and cropped).</p>{{ end }}
   </div>
 </footer>
