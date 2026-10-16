@@ -1,0 +1,15 @@
+# Meeting themes (proposal v0.5, §3).
+- title: Hybrid ML-physics model development
+  question: Where should ML enter the Earth system model — parameterization, full component, correction term, stochastic closure, solver accelerator, data-assimilation layer, or ensemble generator?
+- title: Climate emulators and surrogate systems
+  question: What is being emulated — a process tendency, a component, a full-state trajectory, a coupled system, a response surface, or an ensemble distribution?
+- title: Coupling as the bridge
+  question: How do hybrid components and emulator components exchange fluxes and states without hiding physical inconsistencies?
+- title: Generalization and climate change
+  question: How should emulators be trained and evaluated for forcing levels, mean states, regimes, extremes, and feedbacks that are absent or rare in training data?
+- title: Conservation, stability, and long integrations
+  question: Which constraints are essential, which can be corrected diagnostically, and which failures are scientifically disqualifying?
+- title: Training data, benchmarks, ensembles, and calibration
+  question: Which simulations and perturbation ensembles teach an emulator the climate response rather than only the historical attractor? Which common diagnostics compare systems fairly across grids, components, training data, and scientific goals while evaluating uncertainty, physical diversity, and calibration?
+- title: Software, reproducibility, and interpretability
+  question: What does a sustainable and scientifically auditable hybrid model stack require in coupler APIs, inference serving, data standards, tests, provenance, and community governance? How do we determine whether a model has learned climate physics, a bias correction, or a fragile statistical shortcut?

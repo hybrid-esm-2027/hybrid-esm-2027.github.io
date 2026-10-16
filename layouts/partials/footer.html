@@ -1,0 +1,6 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>{{ site.Title }}</strong><br>{{ site.Params.dates }} · {{ site.Params.venue }}</p>
+    <p>{{ with site.Params.contact_email }}Contact: <a href="mailto:{{ . }}">{{ . }}</a>{{ else }}Contact details to be announced.{{ end }}</p>
+  </div>
+</footer>

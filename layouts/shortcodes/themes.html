@@ -1,0 +1,5 @@
+<ol class="cards">
+{{ range hugo.Data.themes }}
+  <li class="card"><h3>{{ .title }}</h3><p>{{ .question }}</p></li>
+{{ end }}
+</ol>

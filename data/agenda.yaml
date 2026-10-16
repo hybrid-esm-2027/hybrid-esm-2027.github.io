@@ -1,0 +1,39 @@
+# Workshop agenda. Day-level themes come from proposal v0.5, §4.
+# Add sessions under each day as the program is finalized. Times are Mountain Daylight Time (MDT).
+#
+# Session fields:
+#   time:    "09:00–09:30"
+#   type:    plenary | contributed | poster | walk-and-talk | working-group | discussion | break
+#   title:   session or talk title
+#   speaker: (optional) name and affiliation
+#   chair:   (optional)
+#   slides:  (optional) URL or /files/... path, added after the workshop
+#
+# Example:
+#   sessions:
+#     - time: "09:00–09:30"
+#       type: plenary
+#       title: "Talk title"
+#       speaker: "Name (Affiliation)"
+#       chair: "Name"
+
+- day: 1
+  date: "Wednesday, 12 May 2027"
+  theme: Define scope, trust, and readiness
+  outcome: Shared vocabulary for hybrid models and emulators; readiness map; initial failure-mode catalog.
+  summary: What do hybrid ML-physics models and climate emulators each contribute, where do their requirements overlap, and what is ready now under an explicit readiness scale? Focus on shared vocabulary, failure modes, budgets, drift, feedbacks, long-rollout credibility, and a candid readiness ladder.
+  sessions: []
+
+- day: 2
+  date: "Thursday, 13 May 2027"
+  theme: Build the test ladder and design coupling
+  outcome: Draft test-case ladder, benchmark design, coupling checklist, and training-data priorities for both threads.
+  summary: Which lower-order models, idealized systems, architectures, interfaces, training data, and out-of-distribution tests make both hybrid models and emulators physically credible? Focus on atmosphere–ocean–land–ice coupling, conservation, and generalization.
+  sessions: []
+
+- day: 3
+  date: "Friday, 14 May 2027"
+  theme: Build the roadmap
+  outcome: White paper outline, pilot intercomparison plan, working-group leads, and timeline.
+  summary: Which benchmark, intercomparison, diagnostics suite, implementation plan, and governance structure will move the combined community forward over the following six months?
+  sessions: []

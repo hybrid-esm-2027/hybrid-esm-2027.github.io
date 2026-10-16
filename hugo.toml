@@ -1,0 +1,57 @@
+baseURL = "https://hybrid-esm-2027.github.io/"
+locale = "en-US"
+title = "Emulated and Hybrid ML-Physics Earth System Models"
+enableRobotsTXT = true
+
+[params]
+  short_title = "Hybrid & Emulated ESMs 2027"
+  description = "A three-day workshop at NSF NCAR on hybrid ML-physics Earth system models, differentiable models, and coupled climate emulators."
+  dates = "12–14 May 2027"
+  venue = "NSF NCAR Mesa Laboratory, Boulder, Colorado"
+  # Flip to true and set registration_url once the form is live.
+  registration_open = false
+  registration_url = ""
+  contact_email = ""   # TBD: organizer contact address
+
+[markup.goldmark.renderer]
+  unsafe = true   # allow inline HTML in Markdown content
+
+[taxonomies]
+
+[menus]
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 10
+  [[menus.main]]
+    name = "Themes"
+    pageRef = "/themes"
+    weight = 20
+  [[menus.main]]
+    name = "Agenda"
+    pageRef = "/agenda"
+    weight = 30
+  [[menus.main]]
+    name = "Speakers"
+    pageRef = "/speakers"
+    weight = 40
+  [[menus.main]]
+    name = "Call"
+    pageRef = "/call"
+    weight = 50
+  [[menus.main]]
+    name = "Venue"
+    pageRef = "/venue"
+    weight = 60
+  [[menus.main]]
+    name = "Materials"
+    pageRef = "/materials"
+    weight = 70
+  [[menus.main]]
+    name = "News"
+    pageRef = "/news"
+    weight = 80
+  [[menus.main]]
+    name = "Organizers"
+    pageRef = "/organizers"
+    weight = 90

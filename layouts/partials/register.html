@@ -1,0 +1,5 @@
+{{ if and site.Params.registration_open site.Params.registration_url }}
+  <a class="button" href="{{ site.Params.registration_url }}">Register</a>
+{{ else }}
+  <span class="button button-disabled" aria-disabled="true">Registration opens soon</span>
+{{ end }}

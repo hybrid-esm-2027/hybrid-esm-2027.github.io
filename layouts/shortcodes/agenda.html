@@ -1,0 +1,35 @@
+{{/* Renders data/agenda.yaml. Days without sessions show their theme, outcome, and summary only. */}}
+<nav class="day-tabs" aria-label="Agenda days">
+  {{ range hugo.Data.agenda }}<a href="#day-{{ .day }}">Day {{ .day }}</a>{{ end }}
+</nav>
+{{ range hugo.Data.agenda }}
+<section class="day" id="day-{{ .day }}">
+  <h2>Day {{ .day }} · {{ .theme }}</h2>
+  <p class="meta">{{ .date }}</p>
+  <p>{{ .summary }}</p>
+  <p class="outcome"><strong>Target outcome:</strong> {{ .outcome }}</p>
+  {{ with .sessions }}
+  <div class="table-wrap">
+  <table class="agenda">
+    <thead><tr><th scope="col">Time (MDT)</th><th scope="col">Session</th></tr></thead>
+    <tbody>
+    {{ range . }}
+      <tr class="session session-{{ .type | default "other" }}">
+        <td class="time">{{ .time }}</td>
+        <td>
+          {{ with .type }}<span class="tag tag-{{ . }}">{{ replace . "-" " " }}</span>{{ end }}
+          <span class="session-title">{{ .title }}</span>
+          {{ with .speaker }}<span class="session-speaker">{{ . }}</span>{{ end }}
+          {{ with .chair }}<span class="session-chair">Chair: {{ . }}</span>{{ end }}
+          {{ with .slides }}<a class="session-slides" href="{{ . }}">Slides</a>{{ end }}
+        </td>
+      </tr>
+    {{ end }}
+    </tbody>
+  </table>
+  </div>
+  {{ else }}
+  <p class="tbd">Detailed session schedule to be announced.</p>
+  {{ end }}
+</section>
+{{ end }}

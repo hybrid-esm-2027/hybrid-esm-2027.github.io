@@ -1,0 +1,11 @@
+<div class="table-wrap">
+<table class="readiness">
+  <caption>Readiness scale used for talks, posters, and workshop products</caption>
+  <thead><tr><th scope="col">Level</th><th scope="col">Status</th><th scope="col">Evidence expected</th></tr></thead>
+  <tbody>
+  {{ range hugo.Data.readiness }}
+    <tr><th scope="row"><span class="level">{{ .level }}</span></th><td>{{ .status }}</td><td>{{ .evidence | safeHTML }}</td></tr>
+  {{ end }}
+  </tbody>
+</table>
+</div>

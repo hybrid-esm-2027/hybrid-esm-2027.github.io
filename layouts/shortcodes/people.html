@@ -1,0 +1,17 @@
+{{/* Usage: {{< people "speakers" >}} or {{< people "organizers" >}} */}}
+{{ $key := .Get 0 }}
+{{ $people := index hugo.Data $key }}
+{{ with $people }}
+<ul class="people">
+  {{ range . }}
+  <li>
+    <span class="person-name">{{ with .url }}<a href="{{ . }}">{{ end }}{{ .name }}{{ with .url }}</a>{{ end }}</span>
+    {{ with .affiliation }}<span class="person-aff">{{ . }}</span>{{ end }}
+    {{ with .role }}<span class="person-role">{{ . }}</span>{{ end }}
+    {{ with .title }}<span class="person-talk">“{{ . }}”</span>{{ end }}
+  </li>
+  {{ end }}
+</ul>
+{{ else }}
+<p class="tbd">To be announced.</p>
+{{ end }}

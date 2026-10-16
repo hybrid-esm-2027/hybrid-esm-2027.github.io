@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="wrap prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ with .Pages }}
+  <ul class="news-list">
+    {{ range .ByDate.Reverse }}
+    <li>{{ if eq .Section "news" }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time> {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Description }} — {{ . }}{{ end }}</li>
+    {{ end }}
+  </ul>
+  {{ else }}
+    {{ with .Params.empty_message }}<p class="tbd">{{ . }}</p>{{ end }}
+  {{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">NSF NCAR Workshop · {{ site.Params.dates }}</p>
+    <h1>{{ site.Title }}</h1>
+    <p class="hero-meta">{{ site.Params.venue }}</p>
+    <div class="hero-actions">
+      {{ partial "register.html" . }}
+      <a class="button button-secondary" href="{{ "/about/" | relURL }}">About the workshop</a>
+    </div>
+  </div>
+</section>
+<div class="wrap prose">
+  {{ .Content }}
+  {{ $news := where site.RegularPages "Section" "news" }}
+  {{ with first 3 $news }}
+  <h2>News</h2>
+  <ul class="news-list">
+    {{ range . }}<li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+  </ul>
+  {{ end }}
+</div>
+{{ end }}
