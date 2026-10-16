@@ -40,7 +40,9 @@ hugo.toml               site settings and navigation menu
 data/                   agenda, people, themes, readiness scale, outputs
 content/                page text (Markdown)
 layouts/                templates; layouts/shortcodes/ render the data files
-assets/css/site.css     the single stylesheet (light and dark mode)
+assets/css/site.css     the single stylesheet; colour tokens in :root, dark values under
+                        prefers-color-scheme and [data-theme="dark"]
+assets/js/theme.js      light/dark toggle (follows the OS until a visitor picks one)
 ```
 
 ## Image credit
