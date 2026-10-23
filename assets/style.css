@@ -57,8 +57,12 @@ a:hover { color: var(--accent-dark); }
 .nav-links a:hover { color: var(--accent); }
 
 /* Hero */
+/* Banner image sits under a dark tint so the white text stays readable. */
 .hero {
-  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+  background:
+    linear-gradient(90deg, rgba(20, 28, 25, 0.88), rgba(20, 28, 25, 0.55)),
+    url("images/hero.jpg") center / cover no-repeat,
+    var(--hero-from);
   color: #fff;
   padding: 72px 0 64px;
 }
