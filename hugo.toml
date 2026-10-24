@@ -3,66 +3,13 @@ locale = "en-US"
 title = "Emulated and Hybrid ML-Physics Earth System Models"
 enableRobotsTXT = true
 
+# The site is a single page (layouts/index.html); no other page types are built.
+disableKinds = ["section", "taxonomy", "term", "rss", "sitemap", "404"]
+
 [params]
-  short_title = "Hybrid & Emulated ESMs 2027"
-  description = "A three-day workshop at NSF NCAR on hybrid ML-physics Earth system models, differentiable models, and coupled climate emulators."
+  description = "A three-day workshop on hybrid ML-physics Earth system models and coupled climate emulators at the NSF NCAR Mesa Laboratory, Boulder, Colorado, 12–14 May 2027."
   dates = "12–14 May 2027"
-  venue = "NSF NCAR Mesa Laboratory, Boulder, Colorado"
-  # Flip to true and set registration_url once the form is live.
-  registration_open = false
-  registration_url = ""
-  contact_email = ""   # TBD: organizer contact address
-
-  # Homepage banner photo (file lives in assets/images/; Hugo generates responsive sizes).
-  # CC BY-SA 3.0 requires the credit below to stay visible on the site.
-  [params.hero]
-    image = "images/hero-ncar-mesa-lab.jpg"
-    alt = "The NSF NCAR Mesa Laboratory towers, designed by I. M. Pei, with the Flatirons above Boulder behind them"
-    position = "68% 30%"   # CSS object-position: keeps the towers and the Flatirons in frame
-    credit = "Mesa Laboratory photo: Daderot"
-    source_url = "https://commons.wikimedia.org/wiki/File:National_Center_for_Atmospheric_Research_-_Boulder,_Colorado.jpg"
-    license = "CC BY-SA 3.0"
-    license_url = "https://creativecommons.org/licenses/by-sa/3.0/"
-
-[markup.goldmark.renderer]
-  unsafe = true   # allow inline HTML in Markdown content
-
-[taxonomies]
-
-[menus]
-  [[menus.main]]
-    name = "About"
-    pageRef = "/about"
-    weight = 10
-  [[menus.main]]
-    name = "Themes"
-    pageRef = "/themes"
-    weight = 20
-  [[menus.main]]
-    name = "Agenda"
-    pageRef = "/agenda"
-    weight = 30
-  [[menus.main]]
-    name = "Speakers"
-    pageRef = "/speakers"
-    weight = 40
-  [[menus.main]]
-    name = "Call"
-    pageRef = "/call"
-    weight = 50
-  [[menus.main]]
-    name = "Venue"
-    pageRef = "/venue"
-    weight = 60
-  [[menus.main]]
-    name = "Materials"
-    pageRef = "/materials"
-    weight = 70
-  [[menus.main]]
-    name = "News"
-    pageRef = "/news"
-    weight = 80
-  [[menus.main]]
-    name = "Organizers"
-    pageRef = "/organizers"
-    weight = 90
+  # Leave a link empty until the form is live; the page then shows "Opens soon".
+  registration_url = ""   # NCAR registration site
+  abstract_url = ""       # Google Form for abstracts
+  contact_email = ""

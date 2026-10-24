@@ -1,24 +1,145 @@
-{{ define "main" }}
-<section class="hero{{ with site.Params.hero }} hero-has-photo{{ end }}">
-  {{ partial "hero-image.html" . }}
-  <div class="wrap hero-content">
-    <p class="eyebrow">NSF NCAR Workshop · {{ site.Params.dates }}</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.Title }}</title>
+  <meta name="description" content="{{ site.Params.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {{ $css := resources.Get "style.css" | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav wrap">
+      <a class="brand" href="#top">Hybrid &amp; Emulated ESMs 2027</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#themes">Themes</a></li>
+        <li><a href="#format">Format</a></li>
+        <li><a href="#participate">Participate</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">NSF NCAR workshop</p>
     <h1>{{ site.Title }}</h1>
-    <p class="hero-meta">{{ site.Params.venue }}</p>
-    <div class="hero-actions">
-      {{ partial "register.html" . }}
-      <a class="button button-secondary" href="{{ "/about/" | relURL }}">About the workshop</a>
+    <p class="lede">A three-day workshop on hybrid ML-physics Earth system models and coupled climate emulators, held at the NSF NCAR Mesa Laboratory in Boulder, Colorado.</p>
+    <dl class="facts">
+      <div><dt>When</dt><dd>{{ site.Params.dates }}</dd></div>
+      <div><dt>Where</dt><dd>NSF NCAR Mesa Laboratory, Boulder</dd></div>
+      <div><dt>Registration</dt><dd>{{ with site.Params.registration_url }}<a href="{{ . }}">Open</a>{{ else }}Opens soon{{ end }}</dd></div>
+    </dl>
+
+    <div class="supporters">
+      <p class="supporters-label">Supported by</p>
+      <ul class="logos">
+        <li><a href="https://ncar.ucar.edu/"><span class="logo-text">NSF NCAR</span></a></li>
+        <li><a href="https://www.colorado.edu/"><img src="{{ "logos/cu-boulder.png" | relURL }}" alt="University of Colorado Boulder"></a></li>
+        <li><a href="https://www.wcrp-climate.org/digital-earths"><span class="logo-text">WCRP Digital Earths</span></a></li>
+      </ul>
     </div>
   </div>
 </section>
-<div class="wrap prose">
-  {{ .Content }}
-  {{ $news := where site.RegularPages "Section" "news" }}
-  {{ with first 3 $news }}
-  <h2>News</h2>
-  <ul class="news-list">
-    {{ range . }}<li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
-  </ul>
-  {{ end }}
-</div>
-{{ end }}
+
+<section id="about" class="section">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>Machine learning now enters climate modeling in two overlapping ways. Hybrid models place learned components inside process-based Earth system models. Emulators replace a single component, or in some cases the whole coupled system, with a trained network.</p>
+    <p>For climate applications both approaches must meet the same requirements. A model has to remain stable and conserve its budgets over long coupled integrations, and it has to give a physical response to forcing that lies outside the range of its training data. Current research groups approach this problem in very different ways.</p>
+    <p>The workshop brings the hybrid modeling and emulator communities together to compare their methods and to identify the main barriers. Its focus is coupled climate on time scales of years to centuries.</p>
+  </div>
+</section>
+
+<section id="themes" class="section section-alt">
+  <div class="wrap">
+    <h2>Themes</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Hybrid ML-physics model development</h3>
+        <p>Learned parameterizations and other ML components inside process-based models. Many parameterizations are already semi-empirical, and machine learning offers a better way to fit them.</p>
+      </div>
+      <div class="card">
+        <h3>Climate emulators and generalization for changing climates</h3>
+        <p>Emulators of the atmosphere, the ocean and the coupled system. A central question is how they behave under forcing and climate states that are rare or absent in the training data.</p>
+      </div>
+      <div class="card">
+        <h3>Coupled hybrid and ML models and stability</h3>
+        <p>Exchange of fluxes and state variables between components. Conservation and drift in long integrations are covered here.</p>
+      </div>
+      <div class="card">
+        <h3>Benchmarks, evaluation, calibration and interpretability</h3>
+        <p>Shared tests and diagnostics for long climate runs, together with calibration. The theme also includes methods for finding out what a trained model has actually learned.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="format" class="section">
+  <div class="wrap">
+    <h2>Format</h2>
+    <p>Invited speakers will give talks of 15 to 20 minutes, one or two per theme. After every two or three talks there is a moderated discussion block of about an hour, which starts from a set question. Contributed talks and posters will be chosen from submitted abstracts.</p>
+    <p>Breaks are long, so that participants have time for informal discussion. Each breakout session will have a stated goal.</p>
+    <p>The main product of the meeting will be a peer-reviewed perspective article on the state of the field and its next steps. It will be written by the organizing committee, and participants who wish to contribute are welcome to join as co-authors.</p>
+  </div>
+</section>
+
+<section id="participate" class="section section-alt">
+  <div class="wrap">
+    <h2>Participate</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Registration</h3>
+        <p>Registration is handled by NCAR. A link will appear here when it opens.</p>
+        <div class="card-action">{{ with site.Params.registration_url }}<a class="button" href="{{ . }}">Register</a>{{ else }}<span class="button button-disabled">Opens soon</span>{{ end }}</div>
+      </div>
+      <div class="card">
+        <h3>Abstracts</h3>
+        <p>Abstracts for contributed talks and posters are collected through a short online form. The call has not opened yet.</p>
+        <div class="card-action">{{ with site.Params.abstract_url }}<a class="button" href="{{ . }}">Submit an abstract</a>{{ else }}<span class="button button-disabled">Opens soon</span>{{ end }}</div>
+      </div>
+    </div>
+    <p class="muted">The schedule will be posted here once speakers are confirmed.</p>
+  </div>
+</section>
+
+<section id="venue" class="section">
+  <div class="wrap">
+    <h2>Venue</h2>
+    <p>The NSF NCAR Mesa Laboratory is at 1850 Table Mesa Drive, Boulder, Colorado, about 1,860 m above sea level. Most visitors fly into Denver International Airport (DEN), which is roughly 70 km from Boulder.</p>
+    <p>Information on hotels and local transport will be added later.</p>
+  </div>
+</section>
+
+<section id="organizers" class="section section-alt">
+  <div class="wrap">
+    <h2>Organizers</h2>
+    <ul class="people">
+      <li><strong><a href="https://www.colorado.edu/atoc/will-chapman-hehimhis">Will Chapman</a></strong><span>University of Colorado Boulder</span></li>
+      <li><strong><a href="https://www.cisl.ucar.edu/directory/david-john-gagne">David John Gagne</a></strong><span>NSF NCAR</span></li>
+      <li><strong><a href="https://www.pnnl.gov/people/andrew-gettelman">Andrew Gettelman</a></strong><span>Pacific Northwest National Laboratory</span></li>
+      <li><strong><a href="https://leap.columbia.edu/lhawkins/">Linnia Hawkins</a></strong><span>Columbia University; NSF NCAR</span></li>
+      <li><strong><a href="https://www.colorado.edu/atoc/aneesh-subramanian">Aneesh Subramanian</a></strong><span>University of Colorado Boulder</span></li>
+    </ul>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>{{ site.Title }} · {{ site.Params.dates }}{{ with site.Params.contact_email }} · Questions? <a href="mailto:{{ . }}">{{ . }}</a>{{ end }}</p>
+      <p class="credit">Banner: total moisture from a CAMulator simulation.</p>
+    </div>
+  </footer>
+</body>
+</html>
